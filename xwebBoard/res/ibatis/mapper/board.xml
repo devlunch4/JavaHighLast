@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/dtd-map-2.dtd">
+
+
+<sqlMap namespace="board">
+
+<!-- Import post list -->
+	<select id="listAll" resultClass="boardVO">
+		SELECT * FROM JDBC_BOARD ORDER BY BOARD_NO
+		
+	</select>
+
+
+
+
+	<!-- <select id="listPage" resultClass="boardVO" parameterClass="map">
+		select A.* from (
+		select rownum as rnum, B.* from (
+		select * from board1
+		order by seq desc) B
+  <![CDATA[
+    where rownum <= #end#) A 
+   	where A.rnum >= #start#
+  ]]>
+
+	</select>
+
+	<select id="getTotalCount" resultClass="int">
+		SELECT COUNT(*) FROM
+		board1
+	</select>
+
+
+	<insert id="insertBoard" parameterClass="boardVO">
+		INSERT INTO board1
+		VALUES (
+		board1_seq.nextval,
+		#subject#,
+		#writer#,
+		#mail#,
+		#password#,
+		#content#,
+		0,
+		#wip#,
+		sysdate
+		)
+
+		<selectKey keyProperty="seq" resultClass="int">
+			SELECT
+			board1_seq.currval FROM dual
+		</selectKey>
+	</insert>
+
+	<delete id="deleteBoard" parameterClass="int">
+		DELETE FROM board1 WHERE
+		seq = #data#
+	</delete>
+
+	wdate= TO_DATE(sysdate, 'YYYYMMDD')
+	<update id="updateBoard" parameterClass="boardVO">
+		UPDATE board1
+		SET
+		subject=#subject#,
+		password=#password#,
+		mail=#mail#,
+		content=#content#,
+		wdate= sysdate
+		WHERE seq=#seq#
+	</update>
+
+	<update id="hitUpdate" parameterClass="int">
+		UPDATE board1 SET hit=hit+1 WHERE seq=#data#
+	</update> -->
+
+
+
+
+</sqlMap>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This document is ibatis' xml document for environment setting. -->
+<!DOCTYPE sqlMapConfig
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<!-- DB와 연결하는 정보를 properties파일에 설정해 놓고 -->
+	<!-- 이 properties파일의 내용을 읽어올 수 있도록 설정한다. -->
+	<properties resource="ibatis/config/dbinfo.properties" />
+
+
+	<!-- 각각의 sqlMap파일의 namespace와 id속성 값을 연결해서 -->
+	<!-- 실행할 쿼리문을 선택한다. -->
+	<settings useStatementNamespaces="true" />
+
+
+	<!-- 형식:<typeAlias alias="alias명" type="클래스의 전체이름"> -->
+	<typeAlias alias="boardVO" type="board.vo.BoardVO" />
+
+
+	<!-- DB와 연결을 처리하는 부분 -->
+	<!-- dbinfo 프로퍼티의 키 값들을 가져온다. -->
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="${driver}" />
+			<property name="JDBC.ConnectionURL" value="${url}" />
+			<property name="JDBC.Username" value="${user}" />
+			<property name="JDBC.Password" value="${pass}" />
+		</dataSource>
+	</transactionManager>
+
+	<!-- 실행할 SQL문(mapper)을 등록한다 -->
+
+	<!-- 실행할 SQL문을 xml문서로 따로 작성한후 그 xml문서를 아래와 같이 등록하면 된다. -->
+	<!-- 형식) <sqlMap resource="경로명/파일명.xml"/> -->
+	<sqlMap resource="ibatis/mapper/board.xml" />
+
+</sqlMapConfig>
