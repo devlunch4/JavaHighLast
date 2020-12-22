@@ -7,12 +7,27 @@
 
 <sqlMap namespace="board">
 
-<!-- Import post list -->
+
 	<select id="listAll" resultClass="boardVO">
 		SELECT * FROM JDBC_BOARD ORDER BY BOARD_NO
-		
 	</select>
-
+	
+	<insert id="insertBoard" parameterClass="boardVO">
+		INSERT INTO JDBC_BOARD
+		VALUES (
+		board_seq.nextval,
+		#board_title#,
+		#board_writer#,
+		sysdate,
+		0,
+		#board_content#
+		)
+		
+			<selectKey keyProperty="seq" resultClass="int">
+			SELECT
+			board_seq.currval FROM dual
+		</selectKey>
+	</insert>
 
 
 
@@ -32,27 +47,6 @@
 		SELECT COUNT(*) FROM
 		board1
 	</select>
-
-
-	<insert id="insertBoard" parameterClass="boardVO">
-		INSERT INTO board1
-		VALUES (
-		board1_seq.nextval,
-		#subject#,
-		#writer#,
-		#mail#,
-		#password#,
-		#content#,
-		0,
-		#wip#,
-		sysdate
-		)
-
-		<selectKey keyProperty="seq" resultClass="int">
-			SELECT
-			board1_seq.currval FROM dual
-		</selectKey>
-	</insert>
 
 	<delete id="deleteBoard" parameterClass="int">
 		DELETE FROM board1 WHERE

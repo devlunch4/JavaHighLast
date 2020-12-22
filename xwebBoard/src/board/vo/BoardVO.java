@@ -8,6 +8,15 @@ public class BoardVO {
 	public String board_date;
 	public int board_cnt;
 	public String board_content;
+	public int seq;
+
+	public int getSeq() {
+		return seq;
+	}
+
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
 
 	// 겟셋
 	public int getBoard_no() {

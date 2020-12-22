@@ -34,7 +34,7 @@ public class BoardList extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("UTF-8");
 		// get all list
 
 		// 0. . ajax ... if client request get receive data

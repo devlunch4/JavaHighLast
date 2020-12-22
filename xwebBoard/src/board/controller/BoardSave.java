@@ -31,30 +31,31 @@ public class BoardSave extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-
+System.out.println("글작성 1");
 		// 0. getdata
-		String btitle = request.getParameter("btitle");
-		String bwriter = request.getParameter("bwriter");
-		String bcontent = request.getParameter("bcontent");
+		String board_title = request.getParameter("board_title");
+		String board_writer = request.getParameter("board_writer");
+		String board_content = request.getParameter("board_content");
 
+		System.out.println("글작성 2");
 		BoardVO vo = new BoardVO();
 
-		vo.setBoard_title(btitle);
-		vo.setBoard_writer(bwriter);
-		vo.setBoard_content(bcontent);
+		vo.setBoard_title(board_title);
+		vo.setBoard_writer(board_writer);
+		vo.setBoard_content(board_content);
 
 		//vo.setWip(request.getRemoteAddr()); // get client IP this project not need.
 
 		// 1
-
+		System.out.println("글작성 3");
 		IBoardService service = BoardServiceImpl.getService();
-
+		System.out.println("글작성 4");
 		// 2.
 		int seq = service.insertBoard(vo);
-
+		System.out.println("글작성 5");
 		// 3
 		request.setAttribute("result", seq);
-
+		System.out.println("글작성 6");
 		// 4
 		request.getRequestDispatcher("board/result.jsp").forward(request, response);
 	}
