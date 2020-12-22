@@ -29,14 +29,14 @@ public class BoardDaoImpl implements IBoardDao {
 		return dao;
 	}
 
-	// load all content
+	// load all content finish
 	@Override
 	public List<BoardVO> listAll() throws SQLException {
 		// TODO Auto-generated method stub
 		return client.queryForList("board.listAll");
 	}
 
-	// save post
+	// save post finish
 	@Override
 	public int insertBoard(BoardVO vo) throws SQLException {
 		// TODO Auto-generated method stub

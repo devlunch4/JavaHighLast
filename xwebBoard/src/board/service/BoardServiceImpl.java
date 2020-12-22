@@ -24,7 +24,7 @@ public class BoardServiceImpl implements IBoardService {
 		return service;
 	}
 
-	// load all content
+	// load all content finish
 	@Override
 	public List<BoardVO> listAll() {
 		List<BoardVO> list = null;
@@ -37,7 +37,7 @@ public class BoardServiceImpl implements IBoardService {
 		return list;
 	}
 
-	// save post
+	// save post finish
 	@Override
 	public int insertBoard(BoardVO vo) {
 

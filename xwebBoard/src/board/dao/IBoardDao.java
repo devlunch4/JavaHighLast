@@ -9,10 +9,10 @@ import board.vo.BoardVO;
 
 public interface IBoardDao {
 
-	// load all content
+	// load all content finish
 	public List<BoardVO> listAll() throws SQLException;
 
-	// save post
+	// save post finish
 	public int insertBoard(BoardVO vo) throws SQLException;;
 
 	// delete post

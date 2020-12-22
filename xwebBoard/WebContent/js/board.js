@@ -65,6 +65,17 @@ var boardSaveServer = function() {
 	})
 }
 
-// modify board click after servelt
+
+//When clicking the delete post that liner.
+var boardDeleteServer = function(but) { // but is delete button.
+	alert("delete boardDeleteServer 진입");
+	$.get("/xwebBoard/boardDelete.do", {
+		"seq" : vidx
+	}, function(res) {
+		alert("게시글 삭제 >> " + res.sw);
+		// 화면에서 지우기
+		$(but).parents(".panel").remove();
+	}, "json")
+}
 
 

@@ -30,6 +30,11 @@
 	</insert>
 
 
+	<delete id="deleteBoard" parameterClass="int">
+		DELETE FROM JDBC_BOARD WHERE
+		board_no = #board_no#
+	</delete>
+
 
 	<!-- <select id="listPage" resultClass="boardVO" parameterClass="map">
 		select A.* from (
@@ -48,10 +53,7 @@
 		board1
 	</select>
 
-	<delete id="deleteBoard" parameterClass="int">
-		DELETE FROM board1 WHERE
-		seq = #data#
-	</delete>
+
 
 	wdate= TO_DATE(sysdate, 'YYYYMMDD')
 	<update id="updateBoard" parameterClass="boardVO">

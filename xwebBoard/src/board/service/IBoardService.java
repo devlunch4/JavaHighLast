@@ -7,10 +7,10 @@ import board.vo.BoardVO;
 
 public interface IBoardService {
 
-	// load all content
+	// load all content finish
 	public List<BoardVO> listAll();
 
-	// save post
+	// save post finish
 	public int insertBoard(BoardVO vo);
 
 	// delete post

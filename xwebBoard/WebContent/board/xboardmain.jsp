@@ -63,7 +63,9 @@ label {
 
 			} else if (vname == "delete") {
 				alert(vidx + " 번 글 삭제");
-				//boardDeleteServer(this);
+				boardDeleteServer(this);
+				//f5
+				window.location.reload(true);
 			}
 		})
 
