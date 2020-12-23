@@ -20,6 +20,6 @@ public interface IBoardService {
 	public int updateBoard(BoardVO vo);
 
 	// read count update
-	public int hitUpdate(int seq);
+	public int updatecountBoard(BoardVO vo);
 
 }

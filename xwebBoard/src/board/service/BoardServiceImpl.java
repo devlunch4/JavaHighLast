@@ -81,17 +81,17 @@ public class BoardServiceImpl implements IBoardService {
 
 	// read count update
 	@Override
-	public int hitUpdate(int seq) {
+	public int updatecountBoard(BoardVO vo) {
 		int cnt = 0;
 
 		try {
-			cnt = dao.hitUpdate(seq);
+			cnt = dao.updatecountBoard(vo);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return seq;
+		return cnt;
 	}
 
 }

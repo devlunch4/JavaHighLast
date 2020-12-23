@@ -59,8 +59,8 @@ public class BoardDaoImpl implements IBoardDao {
 
 	//read count update
 	@Override
-	public int hitUpdate(int seq) throws SQLException {
-		return client.update("board.hitUpdate", seq);
+	public int updatecountBoard(BoardVO vo) throws SQLException {
+		return client.update("board.updatecountBoard", vo);
 	}
 
 }

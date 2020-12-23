@@ -3,9 +3,7 @@ package board.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-
 import board.vo.BoardVO;
-
 
 public interface IBoardDao {
 
@@ -21,8 +19,7 @@ public interface IBoardDao {
 	// modify post
 	public int updateBoard(BoardVO vo) throws SQLException;;
 
-	//read count update
-	public int hitUpdate(int seq) throws SQLException;
-
+	// read count update
+	public int updatecountBoard(BoardVO vo) throws SQLException;
 
 }
