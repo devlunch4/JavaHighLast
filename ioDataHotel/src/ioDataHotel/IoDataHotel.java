@@ -21,7 +21,7 @@ public class IoDataHotel {
 
 	// 정보가 저장될 파일명 설정
 	// setting save root and file name
-	private String fileName = "c:/hotel.dat";
+	private String fileName = "d:/hotel.dat";
 
 	// 데이터가 변경되었는지 여부를 나타내는 변수 선언 ==> 데이터가 변경되면 true가 된다.
 	// create variable, for checking change data = > if data changed value is true
@@ -122,6 +122,7 @@ public class IoDataHotel {
 		File file = new File(fileName);
 
 		if (!file.exists()) { // 저장된 파일이 없으면... if not save file.
+			System.out.println("저장된 파일이 없습니다. 저장시 새로 저장됩니다.");
 			return null;
 		}
 
@@ -129,6 +130,7 @@ public class IoDataHotel {
 		ObjectInputStream ois = null;
 		try {
 			// 입력용 스트림 객체 생성 create input stream
+			System.out.println("저장된 파일이 확인 되었습니다. 저장된 정보를 로드합니니다.");
 			ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
 
 			hMap = (HashMap<Integer, Room>) ois.readObject();
